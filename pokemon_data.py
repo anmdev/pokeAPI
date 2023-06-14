@@ -1,4 +1,9 @@
 from pokemon_response import PokeAPI
 
-datos_pokemon = PokeAPI().obtener_pokemon('Scizor')
-print(datos_pokemon['name'])
+data = PokeAPI().obtener_pokemon('Scizor')
+print(data['name'])
+
+for stat in data['stats']:
+    print('{} : {}'.format(
+        stat['stat']['name'], 
+        stat['base_stat']))
